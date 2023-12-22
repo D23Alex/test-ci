@@ -7,7 +7,11 @@ RUN mvn package
 
 FROM openjdk:17-oracle AS runtime
 RUN mkdir /app
+RUN addgroup --system --gid 1001 alekseigroup
+RUN adduser --system --uid 1001 aleksei
+USER aleksei
 COPY --from=build /project/target/test-ci-1.0.jar /app/test-ci.jar
 WORKDIR /app
+RUN chown -R aleksei:alekseigroup /app
 EXPOSE 8000
 CMD java $JAVA_OPTS -jar test-ci.jar
