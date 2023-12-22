@@ -36,6 +36,7 @@ jobs:
         run: mvn install
 
       - name: Run tests
+        working-directory: ./api/test-ci
         run: mvn --batch-mode --update-snapshots verify
 
   docker-build:
