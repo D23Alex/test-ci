@@ -32,6 +32,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Install Maven dependencies
+      - working-directory: ./api/test-ci
         run: mvn install
 
       - name: Run tests
