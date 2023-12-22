@@ -7,10 +7,10 @@ RUN mvn package
 
 FROM openjdk:17-alpine AS runtime
 RUN mkdir /app
-RUN addgroup -g 1001 -S tecogroup
-RUN adduser -S teco -u 1001
+RUN addgroup -g 1001 -S alekseigroup
+RUN adduser -S aleksei -u 1001
 COPY --from=build /project/target/test-ci-1.0.jar /app/test-ci.jar
 WORKDIR /app
-RUN chown -R teco:tecogroup /app
+RUN chown -R aleksei:alekseigroup /app
 EXPOSE 8000
 CMD java $JAVA_OPTS -jar test-ci.jar
