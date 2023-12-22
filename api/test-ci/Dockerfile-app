@@ -9,7 +9,6 @@ FROM openjdk:17-alpine AS runtime
 RUN mkdir /app
 RUN addgroup -g 1001 -S tecogroup
 RUN adduser -S teco -u 1001
-USER aleksei
 COPY --from=build /project/target/test-ci-1.0.jar /app/test-ci.jar
 WORKDIR /app
 RUN chown -R teco:tecogroup /app
