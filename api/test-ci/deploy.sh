@@ -13,7 +13,7 @@ if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
     fi
 fi
 
-docker start -d --rm -p 8080:8080 --name $CONTAINER_NAME d23alex/test-ci:latest
+docker run -d --rm -p 8080:8080 --name $CONTAINER_NAME d23alex/test-ci:latest
 
 exit
 ENDSSH
