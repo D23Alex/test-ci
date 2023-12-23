@@ -2,7 +2,7 @@
 
 start=$(date +"%s")
 
-ssh ${SERVER_USER}@${SERVER_HOST} -o StrictHostKeyChecking=no << 'ENDSSH'
+ssh -p ${SERVER_PORT} ${SERVER_USER}@${SERVER_HOST} -i key.txt -t -t -o StrictHostKeyChecking=no << 'ENDSSH'
 docker pull d23alex/test-ci:latest
 
 CONTAINER_NAME=test-ci-app
@@ -13,7 +13,7 @@ if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
     fi
 fi
 
-docker run -d --rm -p 8000:8000 --name $CONTAINER_NAME d23alex/test-ci:latest
+docker run -d --rm -p 8080:8080 --name $CONTAINER_NAME d23alex/test-ci:latest
 
 exit
 ENDSSH
