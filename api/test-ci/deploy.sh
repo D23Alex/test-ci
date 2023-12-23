@@ -2,7 +2,7 @@
 
 start=$(date +"%s")
 
-ssh ${SERVER_USER}@${SERVER_HOST} << 'ENDSSH'
+ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} << 'ENDSSH'
 docker pull d23alex/test-ci:latest
 
 CONTAINER_NAME=test-ci-app
