@@ -18,8 +18,9 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        working-directory: ./ui
         uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ./ui
 
       - name: Build project
         working-directory: ./ui
