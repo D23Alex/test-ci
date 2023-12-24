@@ -18,7 +18,7 @@ export default {
   },
 
   async mounted() {
-    this.hellos = (await axios.get("http://158.160.138.125:8080/api/all-hellos")).data;
+    this.hellos = (await axios.get("https://158.160.138.125:8080/api/all-hellos")).data;
   }
 }
 </script>
