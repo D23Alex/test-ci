@@ -1,5 +1,16 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'App',
+  metaInfo: {
+    title: 'MY TITLE!!!',
+    meta: [
+      {httpEquiv: 'Content-Security-Policy', content: 'upgrade-insecure-requests'}
+    ]
+  },
+}
+
 </script>
 
 <template>
