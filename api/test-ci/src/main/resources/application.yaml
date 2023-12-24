@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://172.17.0.1:5432/scorekeeper
+    url: jdbc:postgresql://host.docker.internal:5432/scorekeeper
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
