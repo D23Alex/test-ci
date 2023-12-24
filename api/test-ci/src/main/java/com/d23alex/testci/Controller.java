@@ -5,8 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    @GetMapping("/api/hello")
-    String hello() {
-        return "Hello!!!!!35";
+    private HelloRepository helloRepository;
+
+    public Controller(HelloRepository helloRepository) {
+        this.helloRepository = helloRepository;
+    }
+
+    @GetMapping("/api/all-hellos")
+    Iterable<Hello> allHellos() {
+        return helloRepository.findAll();
     }
 }

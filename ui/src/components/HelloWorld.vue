@@ -8,8 +8,25 @@ defineProps({
 const count = ref(0)
 </script>
 
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      hellos: []
+    }
+  },
+
+  async mounted() {
+    this.hellos = (await axios.get("http://158.160.138.125:8080/api/all-hellos")).data;
+  }
+}
+</script>
+
 <template>
   <h1>{{ msg }}</h1>
+  <h2> {{ax}}</h2>
+  <li v-for="hello in this.hellos">{{ hello }}</li>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
