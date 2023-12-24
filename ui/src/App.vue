@@ -1,5 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import VueMeta from 'vue-meta'
 </script>
 
 <script>
