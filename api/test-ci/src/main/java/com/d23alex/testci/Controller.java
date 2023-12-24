@@ -15,4 +15,9 @@ public class Controller {
     Iterable<Hello> allHellos() {
         return helloRepository.findAll();
     }
+
+    @GetMapping("/api/hello")
+    String hello() {
+        return "Hello";
+    }
 }
