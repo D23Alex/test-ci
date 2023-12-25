@@ -8,9 +8,9 @@ export default {
   name: 'App',
   metaInfo: {
     title: 'MY TITLE!!!',
-    meta: [
-      {httpEquiv: 'Content-Security-Policy', content: 'upgrade-insecure-requests'}
-    ]
+    //meta: [
+      //{httpEquiv: 'Content-Security-Policy', content: 'upgrade-insecure-requests'}
+    //]
   },
 }
 </script>
