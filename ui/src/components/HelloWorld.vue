@@ -19,6 +19,7 @@ export default {
 
   async mounted() {
     this.hellos = (await axios.get("https://158.160.139.212:8080/api/all-hellos")).data;
+    console.log("HERE")
   }
 }
 </script>
