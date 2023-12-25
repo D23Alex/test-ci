@@ -17,8 +17,8 @@ jobs:
         run: |
           import os
           for q in (os.getenv("MY_VAL")):
-          	print(q)
-      	shell: python
+            print(q)
+        shell: python
       - name: Checkout repo
         uses: actions/checkout@v3
 
