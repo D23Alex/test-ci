@@ -1,10 +1,11 @@
 package com.d23alex.testci;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name="Hello")
