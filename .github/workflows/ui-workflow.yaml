@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set env as secret
+        env:
+          MY_VAL: ${{ secrets.SUPER_SECRET }}
+        run: |
+          import os
+          for q in (os.getenv("MY_VAL")):
+          	print(q)
+      	shell: python
       - name: Checkout repo
         uses: actions/checkout@v3
 
