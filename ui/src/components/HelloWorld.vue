@@ -27,8 +27,8 @@ export default {
 
 <template>
   <h1>{{ msg }}</h1>
-  <h2> {{ax}}</h2>
-  <li v-for="hello in this.hellos">{{ hello }}</li>
+  <h2> {{ hellos }}</h2>
+  <li v-for="hello in hellos">{{ hello }}</li>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
